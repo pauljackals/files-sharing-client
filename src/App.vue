@@ -25,10 +25,10 @@ export default {
     },
     created() {
         this.fetchMe()
-            .then(() => {
+            .catch(() => {})
+            .finally(() => {
                 this.ready = true
             })
-            .catch(() => {})
     },
 };
 </script>

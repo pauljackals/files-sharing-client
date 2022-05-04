@@ -1,11 +1,18 @@
+import { VIEW } from '@/config/constants'
 import { createRouter, createWebHistory } from 'vue-router'
 import DirectoryView from "../views/DirectoryView.vue"
+import LoginView from "../views/LoginView.vue"
 
 const routes = [
     {
         path: '/',
-        name: DirectoryView.name,
+        name: VIEW.DIRECTORY_VIEW,
         component: DirectoryView
+    },
+    {
+        path: '/login',
+        name: VIEW.LOGIN_VIEW,
+        component: LoginView
     }
 ]
 

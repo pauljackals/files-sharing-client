@@ -14,8 +14,7 @@ const initDefault = {
 const fetchConfigured = (method, url, body, init) => fetch(api+url, {
     ...initDefault,
     method,
-    // body: JSON.stringify(body),
-    body,
+    body: JSON.stringify(body),
     ...init
 })
     .then(response => Promise.all([response, response.json()]))
@@ -29,5 +28,10 @@ const fetchConfigured = (method, url, body, init) => fetch(api+url, {
 
 export default {
     fetchMe: () => fetchConfigured(HTTP.GET, "/access/me"),
+    logIn: (username, password) => fetchConfigured(HTTP.POST, "/access/login", {
+        username,
+        password
+    }),
+    logOut: () => fetchConfigured(HTTP.DELETE, "/access/logout"),
     fetchDirectory: () => fetchConfigured(HTTP.GET, "/directory")
 }

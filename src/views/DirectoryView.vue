@@ -9,16 +9,25 @@
 </template>
 
 <script>
-import { STORE } from '@/config/constants'
-import { mapActions } from 'vuex'
+import { STORE, VIEW } from '@/config/constants'
+import { mapActions, mapState } from 'vuex'
+
 export default {
-    name: "DirectoryView",
+    name: VIEW.DIRECTORY_VIEW,
+    computed: {
+        ...mapState({
+            user: STORE.STATE.USER
+        })
+    },
     methods: {
         ...mapActions({
             fetchDirectory: STORE.ACTIONS.FETCH_DIRECTORY
         })
     },
     created() {
+        if(!this.user) {
+            return this.$router.push({name: VIEW.LOGIN_VIEW})
+        }
         this.fetchDirectory()
             .catch(() => {})
     }
