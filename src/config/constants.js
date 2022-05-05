@@ -49,7 +49,8 @@ const VIEW = {
     REGISTER_VIEW: "RegisterView",
     ADMIN_VIEW: "AdminView",
     ADMIN_CODE_VIEW: "AdminCodeView",
-    ADMIN_USER_VIEW: "AdminUserView"
+    ADMIN_USER_VIEW: "AdminUserView",
+    ERROR_VIEW: "ErrorView"
 }
 const COMPONENT = {
     LOGOUT_BUTTON: "LogoutButton",

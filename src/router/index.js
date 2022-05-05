@@ -6,6 +6,7 @@ import RegisterView from "../views/RegisterView.vue"
 import AdminView from "../views/admin/AdminView.vue"
 import AdminCodeView from "../views/admin/AdminCodeView.vue"
 import AdminUserView from "../views/admin/AdminUserView.vue"
+import ErrorView from "../views/ErrorView.vue"
 
 const routes = [
     {
@@ -40,6 +41,14 @@ const routes = [
                 component: AdminUserView
             }
         ]
+    },
+    {
+        path: "/:path(.*)*",
+        name: VIEW.ERROR_VIEW,
+        component: ErrorView,
+        props: {
+            message: "resource not found"
+        }
     }
 ]
 
