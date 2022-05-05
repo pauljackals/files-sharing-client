@@ -1,3 +1,7 @@
+import isDevelopment from "./isDevelopment"
+
+const API = isDevelopment ? `http://localhost:${process.env.VUE_APP_EXPRESS_PORT || 3000}` : "/api"
+
 const HTTP = {
     GET: "GET",
     POST: "POST",
@@ -15,6 +19,7 @@ const STORE = {
         SET_USER: "SET_USER",
         CLEAR_USER: "CLEAR_USER",
         SET_DIRECTORY: "SET_DIRECTORY",
+        CLEAR_DIRECTORY: "CLEAR_DIRECTORY",
         SET_CODES: "SET_CODES",
         ADD_CODE: "ADD_CODE",
         CLEAR_CODES: "CLEAR_CODES",
@@ -53,10 +58,12 @@ const COMPONENT = {
     CODE_LIST: "CodeList",
     CODE_ITEM: "CodeItem",
     USER_LIST: "UserList",
-    USER_ITEM: "UserItem"
+    USER_ITEM: "UserItem",
+    DIRECTORY_NODE: "DirectoryNode"
 }
 
 export {
+    API,
     HTTP,
     STORE,
     VIEW,

@@ -1,27 +1,33 @@
 <template>
     <div id="directory">
-        <h1>shared</h1>
         <ul>
-            <li>dir1</li>
-            <li>dir2</li>
+            <DirectoryNode v-if="directory" :node="directory"/>
         </ul>
     </div>
 </template>
 
 <script>
 import { STORE, VIEW } from '@/config/constants'
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapMutations, mapState } from 'vuex'
+import DirectoryNode from '@/components/DirectoryNode.vue'
 
 export default {
     name: VIEW.DIRECTORY_VIEW,
+    components: {
+        DirectoryNode
+    },
     computed: {
         ...mapState({
-            user: STORE.STATE.USER
+            user: STORE.STATE.USER,
+            directory: STORE.STATE.DIRECTORY
         })
     },
     methods: {
         ...mapActions({
             fetchDirectory: STORE.ACTIONS.FETCH_DIRECTORY
+        }),
+        ...mapMutations({
+            clearDirectory: STORE.MUTATIONS.CLEAR_DIRECTORY
         })
     },
     created() {
@@ -30,9 +36,15 @@ export default {
         }
         this.fetchDirectory()
             .catch(() => {})
+    },
+    unmounted() {
+        this.clearDirectory()
     }
 }
 </script>
 
 <style scoped>
+ul {
+    text-align: left;
+}
 </style>

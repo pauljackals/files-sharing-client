@@ -20,6 +20,10 @@ export default {
         state[STORE.STATE.DIRECTORY] = directory
     },
 
+    [STORE.MUTATIONS.CLEAR_DIRECTORY](state) {
+        state[STORE.STATE.DIRECTORY] = null
+    },
+
     [STORE.MUTATIONS.SET_CODES](state, {codes}) {
         state[STORE.STATE.CODES] = codes
     },
