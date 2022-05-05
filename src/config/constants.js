@@ -8,7 +8,8 @@ const STORE = {
     STATE: {
         USER: "USER",
         DIRECTORY: "DIRECTORY",
-        CODES: "CODES"
+        CODES: "CODES",
+        USERS: "USERS"
     },
     MUTATIONS: {
         SET_USER: "SET_USER",
@@ -17,7 +18,10 @@ const STORE = {
         SET_CODES: "SET_CODES",
         ADD_CODE: "ADD_CODE",
         CLEAR_CODES: "CLEAR_CODES",
-        REMOVE_CODE: "REMOVE_CODE"
+        REMOVE_CODE: "REMOVE_CODE",
+        SET_USERS: "SET_USERS",
+        CLEAR_USERS: "CLEAR_USERS",
+        REMOVE_USER: "REMOVE_USER",
     },
     ACTIONS: {
         FETCH_ME: "FETCH_ME",
@@ -27,7 +31,9 @@ const STORE = {
         FETCH_DIRECTORY: "FETCH_DIRECTORY",
         FETCH_CODES: "FETCH_CODES",
         GENERATE_CODE: "GENERATE_CODE",
-        DESTROY_CODE: "DESTROY_CODE"
+        DESTROY_CODE: "DESTROY_CODE",
+        FETCH_USERS: "FETCH_USERS",
+        DESTROY_USER: "DESTROY_USER"
     }
 }
 
@@ -45,7 +51,9 @@ const COMPONENT = {
     NAVIGATION_BAR: "NavigationBar",
     USER_FORM: "UserForm",
     CODE_LIST: "CodeList",
-    CODE_ITEM: "CodeItem"
+    CODE_ITEM: "CodeItem",
+    USER_LIST: "UserList",
+    USER_ITEM: "UserItem"
 }
 
 export {

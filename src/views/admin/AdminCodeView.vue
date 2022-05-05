@@ -8,7 +8,7 @@
 <script>
 import { STORE, VIEW } from '@/config/constants'
 import CodeList from '@/components/code/CodeList.vue'
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapMutations, mapState } from 'vuex'
 
 export default {
     components: { CodeList },
@@ -23,6 +23,9 @@ export default {
             fetchCodes: STORE.ACTIONS.FETCH_CODES,
             generateCodeAction: STORE.ACTIONS.GENERATE_CODE
         }),
+        ...mapMutations({
+           clearCodes: STORE.MUTATIONS.CLEAR_CODES 
+        }),
         generateCode() {
             this.generateCodeAction()
                 .catch(() => {})
@@ -31,6 +34,9 @@ export default {
     created() {
         this.fetchCodes()
             .catch(() => {})
+    },
+    unmounted() {
+        this.clearCodes()
     }
 }
 </script>

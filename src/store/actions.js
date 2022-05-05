@@ -64,5 +64,21 @@ export default {
                 const {code} = response.bodyJson
                 commit(STORE.MUTATIONS.REMOVE_CODE, {code})
             })
-    }
+    },
+
+    [STORE.ACTIONS.FETCH_USERS]({commit}) {
+        return http.fetchUsers()
+            .then(response => {
+                const {users} = response.bodyJson
+                commit(STORE.MUTATIONS.SET_USERS, {users})
+            })
+    },
+
+    [STORE.ACTIONS.DESTROY_USER]({commit}, {_id}) {
+        return http.destroyUser(_id)
+            .then(response => {
+                const {user} = response.bodyJson
+                commit(STORE.MUTATIONS.REMOVE_USER, {user})
+            })
+    },
 }

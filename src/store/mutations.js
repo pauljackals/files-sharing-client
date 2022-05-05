@@ -2,6 +2,11 @@ import { STORE } from "@/config/constants";
 
 const {SET_USER} = STORE.MUTATIONS
 
+const removeElement = (elements, elementToRemove) => {
+    const index = elements.findIndex(element => element._id===elementToRemove._id)
+    elements.splice(index, 1)
+}
+
 export default {
     [SET_USER](state, {user}) {
         state[STORE.STATE.USER] = user
@@ -28,8 +33,18 @@ export default {
     },
 
     [STORE.MUTATIONS.REMOVE_CODE](state, {code}) {
-        const codes = state[STORE.STATE.CODES]
-        const index = codes.findIndex(codeStore => codeStore._id===code._id)
-        codes.splice(index, 1)
-    }
+        removeElement(state[STORE.STATE.CODES], code)
+    },
+
+    [STORE.MUTATIONS.SET_USERS](state, {users}) {
+        state[STORE.STATE.USERS] = users
+    },
+    
+    [STORE.MUTATIONS.CLEAR_USERS](state) {
+        state[STORE.STATE.USERS] = null
+    },
+
+    [STORE.MUTATIONS.REMOVE_USER](state, {user}) {
+        removeElement(state[STORE.STATE.USERS], user)
+    },
 }

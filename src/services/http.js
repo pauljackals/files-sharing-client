@@ -41,5 +41,7 @@ export default {
     fetchDirectory: () => fetchConfigured(HTTP.GET, "/directory"),
     fetchCodes: () => fetchConfigured(HTTP.GET, "/admin/code"),
     generateCode: () => fetchConfigured(HTTP.POST, "/admin/code"),
-    destroyCode: (_id) => fetchConfigured(HTTP.DELETE, `/admin/code/${_id}`)
+    destroyCode: (_id) => fetchConfigured(HTTP.DELETE, `/admin/code/${_id}`),
+    fetchUsers: () => fetchConfigured(HTTP.GET, "/admin/user"),
+    destroyUser: (_id) => fetchConfigured(HTTP.DELETE, `/admin/user/${_id}`)
 }

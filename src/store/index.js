@@ -7,7 +7,8 @@ export default createStore({
     state: {
         [STORE.STATE.USER]: null,
         [STORE.STATE.DIRECTORY]: null,
-        [STORE.STATE.CODES]: null
+        [STORE.STATE.CODES]: null,
+        [STORE.STATE.USERS]: null
     },
     mutations,
     actions
