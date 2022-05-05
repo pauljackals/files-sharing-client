@@ -1,5 +1,7 @@
 <template>
-    <UserForm @submitChain="register" :register="true" />
+    <div id="register">
+        <UserForm @submitChain="register" :register="true" />
+    </div>
 </template>
 
 <script>
@@ -29,7 +31,7 @@ export default {
     },
     created() {
         if (this.user) {
-            this.$router.push({ name: VIEW.DIRECTORY_VIEW });
+            return this.$router.push({ name: VIEW.DIRECTORY_VIEW });
         }
     },
 };

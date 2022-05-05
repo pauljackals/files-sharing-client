@@ -44,11 +44,8 @@ body {
     text-align: center;
     color: green;
     background-color: black;
-    height: 100vh;
+    min-height: 100vh;
 }
-/* nav a.router-link-exact-active {
-    color: #42b983;
-} */
 button, input[type="submit"] {
     background-color: green;
     border: none;

@@ -2,7 +2,7 @@
     <div id="login">
         <UserForm @submitChain="logIn" :register="false"/>
         <router-link :to="registerView" class="register">
-            New? Register now!
+            New? Register now
         </router-link>
     </div>
 </template>
@@ -40,7 +40,7 @@ export default {
     },
     created() {
         if(this.user) {
-            this.$router.push({name: DIRECTORY_VIEW})
+            return this.$router.push({name: DIRECTORY_VIEW})
         }
     }
 }

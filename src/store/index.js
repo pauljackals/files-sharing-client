@@ -6,7 +6,8 @@ import actions from './actions'
 export default createStore({
     state: {
         [STORE.STATE.USER]: null,
-        [STORE.STATE.DIRECTORY]: null
+        [STORE.STATE.DIRECTORY]: null,
+        [STORE.STATE.CODES]: null
     },
     mutations,
     actions

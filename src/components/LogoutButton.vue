@@ -18,6 +18,7 @@ export default {
                 .then(() => {
                     router.push({name: VIEW.LOGIN_VIEW})
                 })
+                .catch(() => {})
         }
     }
 }

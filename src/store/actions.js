@@ -39,5 +39,30 @@ export default {
                 const {directory} = response.bodyJson
                 commit(STORE.MUTATIONS.SET_DIRECTORY, {directory})
             })
+    },
+
+    [STORE.ACTIONS.FETCH_CODES]({commit}) {
+        return http.fetchCodes()
+            .then(response => {
+                const {codes} = response.bodyJson
+                codes.reverse()
+                commit(STORE.MUTATIONS.SET_CODES, {codes})
+            })
+    },
+
+    [STORE.ACTIONS.GENERATE_CODE]({commit}) {
+        return http.generateCode()
+            .then(response => {
+                const {code} = response.bodyJson
+                commit(STORE.MUTATIONS.ADD_CODE, {code})
+            })
+    },
+
+    [STORE.ACTIONS.DESTROY_CODE]({commit}, {_id}) {
+        return http.destroyCode(_id)
+            .then(response => {
+                const {code} = response.bodyJson
+                commit(STORE.MUTATIONS.REMOVE_CODE, {code})
+            })
     }
 }

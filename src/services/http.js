@@ -38,5 +38,8 @@ export default {
         password
     }),
     logOut: () => fetchConfigured(HTTP.DELETE, "/access/logout"),
-    fetchDirectory: () => fetchConfigured(HTTP.GET, "/directory")
+    fetchDirectory: () => fetchConfigured(HTTP.GET, "/directory"),
+    fetchCodes: () => fetchConfigured(HTTP.GET, "/admin/code"),
+    generateCode: () => fetchConfigured(HTTP.POST, "/admin/code"),
+    destroyCode: (_id) => fetchConfigured(HTTP.DELETE, `/admin/code/${_id}`)
 }

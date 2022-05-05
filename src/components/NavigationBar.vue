@@ -11,9 +11,13 @@
         </div>
         <div v-else class="nav-part">
             <span class="nav-username">{{user.username}}</span>
+            <router-link v-if="user.admin" :to="adminView">
+                <button>admin</button>
+            </router-link>
             <LogoutButtonVue />
         </div>
     </nav>
+    <div id="nav-dummy"></div>
 </template>
 
 <script>
@@ -29,7 +33,8 @@ export default {
     data(){
         return {
             directoryView: {name: VIEW.DIRECTORY_VIEW},
-            loginView: {name: VIEW.LOGIN_VIEW}
+            loginView: {name: VIEW.LOGIN_VIEW},
+            adminView: {name: VIEW.ADMIN_VIEW}
         }
     },
     computed: {
@@ -41,13 +46,19 @@ export default {
 </script>
 
 <style scoped>
+nav, #nav-dummy {
+    height: 70px;
+}
+#nav-dummy {
+    margin-bottom: 50px;
+}
 nav {
     background-color: green;
     color: black;
     display: flex;
-    height: 70px;
     align-items: center;
-    margin-bottom: 50px;
+    position: fixed;
+    width: 100%;
 }
 .nav-part {
     flex: 1;
