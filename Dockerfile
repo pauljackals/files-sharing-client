@@ -6,5 +6,5 @@ RUN yarn build
 
 FROM nginx:1.21.6-alpine
 WORKDIR /var/www/html
-
 COPY --from=builder /opt/client/dist ./client
+COPY ./nginx/default.conf /
