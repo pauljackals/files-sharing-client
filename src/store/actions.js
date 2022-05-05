@@ -12,6 +12,14 @@ export default {
             .then(setUser(commit))
     },
 
+    [STORE.ACTIONS.REGISTER]({commit}, {
+        username,
+        password,
+        code
+    }) {
+        return http.register(username, password, code)
+    },
+
     [STORE.ACTIONS.LOG_IN]({commit}, {
         username,
         password

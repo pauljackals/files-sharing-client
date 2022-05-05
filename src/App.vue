@@ -40,23 +40,41 @@ body {
 }
 
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    color: #2c3e50;
+    color: green;
+    background-color: black;
+    height: 100vh;
 }
-
-nav {
-    padding: 30px;
-}
-
-nav a {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
+/* nav a.router-link-exact-active {
     color: #42b983;
+} */
+button, input[type="submit"] {
+    background-color: green;
+    border: none;
+    color: black;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input {
+    background-color: black;
+    border: 1px solid green;
+    font-family: inherit;
+    color: green;
+    font-size: 16px;
+}
+input:-webkit-autofill {
+    background-color: green;
+    color: black;
+}
+h1 {
+    margin-top: 0;
+}
+a {
+    color: inherit;
 }
 </style>

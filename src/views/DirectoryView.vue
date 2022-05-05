@@ -35,10 +35,4 @@ export default {
 </script>
 
 <style scoped>
-#directory {
-    background-color: lightcoral;
-}
-h1 {
-    margin-top: 0;
-}
 </style>

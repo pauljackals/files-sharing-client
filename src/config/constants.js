@@ -16,6 +16,7 @@ const STORE = {
     },
     ACTIONS: {
         FETCH_ME: "FETCH_ME",
+        REGISTER: "REGISTER",
         LOG_IN: "LOG_IN",
         LOG_OUT: "LOG_OUT",
         FETCH_DIRECTORY: "FETCH_DIRECTORY"
@@ -25,7 +26,8 @@ const STORE = {
 const VIEW = {
     APP: "App",
     DIRECTORY_VIEW: "DirectoryView",
-    LOGIN_VIEW: "LoginView"
+    LOGIN_VIEW: "LoginView",
+    REGISTER_VIEW: "RegisterView"
 }
 const COMPONENT = {
     LOGOUT_BUTTON: "LogoutButton",

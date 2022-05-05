@@ -1,9 +1,18 @@
 <template>
     <nav>
-        <router-link :to="directoryView">Files Sharing</router-link>
-        <span v-if="user">{{user.username}}</span>
-        <LogoutButtonVue v-if="user"/>
-        <router-link v-else :to="loginView">login</router-link>
+        <div class="nav-part"></div>
+        <div class="nav-part">
+            <router-link :to="directoryView" class="nav-title">Files Sharing</router-link>
+        </div>
+        <div v-if="!user" class="nav-part">
+            <router-link :to="loginView">
+                <button>login</button>
+            </router-link>
+        </div>
+        <div v-else class="nav-part">
+            <span class="nav-username">{{user.username}}</span>
+            <LogoutButtonVue />
+        </div>
     </nav>
 </template>
 
@@ -33,6 +42,31 @@ export default {
 
 <style scoped>
 nav {
-    background-color: lightskyblue;
+    background-color: green;
+    color: black;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.nav-part {
+    flex: 1;
+}
+.nav-part > *:not(:first-child) {
+    margin-left: 30px;
+}
+.nav-title {
+    font-size: 40px;
+    font-weight: bold;
+}
+button {
+    background-color: black;
+    color: green;
+    font-size: 20px;
+}
+.nav-username {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
 }
 </style>

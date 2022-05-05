@@ -28,6 +28,11 @@ const fetchConfigured = (method, url, body, init) => fetch(api+url, {
 
 export default {
     fetchMe: () => fetchConfigured(HTTP.GET, "/access/me"),
+    register: (username, password, code) => fetchConfigured(HTTP.POST, "/access/register", {
+        username,
+        password,
+        code
+    }),
     logIn: (username, password) => fetchConfigured(HTTP.POST, "/access/login", {
         username,
         password
