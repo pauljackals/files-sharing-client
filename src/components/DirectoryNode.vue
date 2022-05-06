@@ -1,6 +1,6 @@
 <template>
     <li :class="{directory, open}">
-        <span v-if="directory" class="node-name node-directory" @click="toggle">{{node.name}}</span>
+        <span v-if="directory" class="node-name node-directory" @click="toggle" @mousedown.prevent>{{node.name}}</span>
         <a v-else class="node-name node-file" :href="link" target="_blank">{{node.name}}</a>
         <span class="node-size">({{size}}MB)</span>
         <ul v-if="node.children && open">
@@ -38,9 +38,10 @@ export default {
     font-style: italic;
 }
 li {
-    margin-bottom: 5px;
+    margin-top: 5px;
     font-size: 18px;
     list-style: none;
+    padding-left: 5px;
 }
 .node-name {
     cursor: pointer;
@@ -52,9 +53,10 @@ li {
     padding: 0 2px;
 }
 li.directory::marker {
-    content: ">";
+    content: "+";
+    font-weight: bold;
 }
 li.directory.open::marker {
-    content: "V";
+    content: "-";
 }
 </style>
